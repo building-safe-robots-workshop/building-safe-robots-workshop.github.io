@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  {% include head.html %}
 
-  <body>
 
-    {% include sidebar.html %}
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/lanyon.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
+  </head>
+  
+  
+  
+  
+  <body class="theme-base-08 ">
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-item">
+        <p><strong>IROS 2025 Workshop</strong><br>Building Safe Robots</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/">Home</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/program/">Program</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/speakers/">Invited Speakers</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/cfp/">Call for Papers</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/organizers/">Organizers</a>
+      </nav>
+    </div>
+
     <div class="wrap">
       <div class="masthead">
         <div class="container">
@@ -20,7 +44,7 @@
       </div>
 
       <div class="container content">
-        {{ content }}
+        {{ content }}  
       </div>
     </div>
 
@@ -28,4 +52,11 @@
 
     <script src='{{ site.baseurl }}/public/js/script.js'></script>
   </body>
+
+
+ 
 </html>
+
+
+
+

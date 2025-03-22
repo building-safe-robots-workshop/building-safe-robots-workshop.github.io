@@ -3,35 +3,25 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<h1>Building Safe Robots Workshop – IROS 2025</h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+<p><strong>Date:</strong> To be confirmed at IROS 2025</p>
+<p><strong>Location:</strong> IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025</p>
 
-    {{ post.content }}
-  </div>
-  {% endfor %}
-</div>
+<p>This full-day workshop focuses on holistic strategies for safety in robotics, integrating modelling, control, and implementation. It brings together experts in robotics, biomechanics, AI, and certification to define a unified vision for human-robot safety and standards.</p>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ '/' | absolute_url }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | absolute_url }}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<p>Topics covered include:</p>
+<ul>
+  <li>Biomechanics and injury thresholds</li>
+  <li>Tactile and ergonomic robot design</li>
+  <li>Collision avoidance and reflex strategies</li>
+  <li>Safety certification and regulatory alignment</li>
+</ul>
+
+<p>We invite academic and industry participants to join a dynamic program of talks, panels, posters, and interdisciplinary clinics.</p>
+
+<p>👉 Check out the <a href="/program/">Program</a>, <a href="/speakers/">Invited Speakers</a>, <a href="/cfp/">Call for Papers</a>, and <a href="/organizers/">Organizers</a>!</p>
+
+<!-- We intentionally removed {{ content }} from the default.html layout to avoid duplication -->
+
+
