@@ -44,7 +44,40 @@ html {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+
+h1 {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #905656;
+  margin-top: 0;         /* 🔻 Removes space above */
+  margin-bottom: -1rem;
+}
+
+
+/* Divider style */
+hr.section-divider {
+  border: none;
+  height: 3px;
+  background: #ccc;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: divider-reveal 0.7s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+/* Animation keyframes */
+@keyframes divider-reveal {
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+
+h2, h3, h4, h5, h6 {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #313131;
@@ -555,4 +588,84 @@ a.pagination-item:hover {
 /* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
+}
+
+
+
+
+.organizer-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Reduced spacing between image and text */
+  margin-bottom: 1rem; /* Reduced spacing between rows */
+  padding-bottom: 1rem; /* Reduced bottom padding */
+  border-bottom: 2px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+.organizer-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Invert direction every other row */
+.organizer-row:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.organizer-row .info {
+  font-size: 0.75rem; /* Adjust text size here */
+}
+
+.organizer-row strong {
+  font-size: 1.1rem; /* Adjust name size here */
+}
+
+
+
+
+
+
+.speaker-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Reduced spacing between image and text */
+  margin-bottom: 1rem; /* Reduced spacing between rows */
+  padding-bottom: 1rem; /* Reduced bottom padding */
+  border-bottom: 2px solid #eee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.speaker-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.speaker-row:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.speaker-row strong {
+  font-size: 1.1rem; /* Adjust name size here */
+}
+
+.speaker-row .info {
+  font-size: 0.75rem; /* Adjust detail text size here */
+}
+
+
+.nokov-logo {
+  object-fit: contain !important;
+  width: auto;
+  height: 100px;
+  max-width: 200px;
 }

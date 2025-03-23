@@ -16,31 +16,43 @@
   
   
   
-  <body class="theme-base-08 ">
-    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+  <body class="theme-base-08 sidebar-overlay">
+    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" checked>
 
     <div class="sidebar" id="sidebar">
       <div class="sidebar-item">
-        <p><strong>IROS 2025 Workshop</strong><br>Building Safe Robots</p>
+        <p style="font-size: 1.1rem; line-height: 1.4;">
+          <strong style="font-size: 1.4rem;">IROS 2025 WS</strong><br>
+          <strong style="font-size: 1.25rem; color: rgb(218, 191, 191);">Building Safe Robots</strong>
+        </p>
       </div>
+      
 
       <nav class="sidebar-nav">
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/">Home</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/program/">Program</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/speakers/">Invited Speakers</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/cfp/">Call for Papers</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/organizers/">Organizers</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/ " style="font-weight: bold;">Home</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/program/" style="font-weight: bold;">Program</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/speakers/" style="font-weight: bold;">Invited Speakers</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/cfp/" style="font-weight: bold;">Call for Papers</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/organizers/" style="font-weight: bold;">Organizers</a>
       </nav>
     </div>
 
     <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
+      <div class="masthead" style="position: relative;">
+        <div style="position: absolute; left: 19rem; top: 50%; transform: translateY(-50%);">
+          <a href="{{ site.baseurl }}/">
+            <img src="{{ '/images/logo.png' | relative_url }}" alt="Workshop Logo" style="height: 100px;">
+          </a>
+        </div>
+      
+        <div class="container" style="padding-left: 5px;">
+          <h3 class="masthead-title" style="font-size: 1.3rem;">
+            <a href="{{ site.baseurl }}/" title="Home" style="font-size: 1.5rem;">{{ site.title }}</a><br>
+            <small style="font-size: 1.05rem; color: #333;">{{ site.tagline }}</small>
           </h3>
         </div>
+
+        
       </div>
 
       <div class="container content">
