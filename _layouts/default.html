@@ -38,22 +38,25 @@
     </div>
 
     <div class="wrap">
-      <div class="masthead" style="position: relative;">
-        <div style="position: absolute; left: 19rem; top: 50%; transform: translateY(-50%);">
-          <a href="{{ site.baseurl }}/">
-            <img src="{{ '/images/logo.png' | relative_url }}" alt="Workshop Logo" style="height: 100px;">
-          </a>
-        </div>
+      <div class="masthead">
+        <div class="container" style="display: flex; align-items: center; flex-wrap: wrap;">
+          <!-- Logo wrapper -->
+          <div style="flex: 0 0 auto;">
+            <a href="{{ site.baseurl }}/">
+              <img src="{{ '/images/logo.png' | relative_url }}" alt="Workshop Logo" style="height: 95px; max-width: 100%;">
+            </a>
+          </div>
       
-        <div class="container" style="padding-left: 5px;">
-          <h3 class="masthead-title" style="font-size: 1.3rem;">
-            <a href="{{ site.baseurl }}/" title="Home" style="font-size: 1.5rem;">{{ site.title }}</a><br>
-            <small style="font-size: 1.05rem; color: #333;">{{ site.tagline }}</small>
-          </h3>
+          <!-- Title wrapper -->
+          <div style="flex: 1; min-width: 200px; padding-left: 0.5rem;">
+            <h3 class="masthead-title" style="margin: 0;">
+              <a href="{{ site.baseurl }}/" title="Home" style="font-size: 1.6rem;">{{ site.title }}</a><br>
+              <small style="font-size: 1.05rem; color: #333;">{{ site.tagline }}</small>
+            </h3>
+          </div>
         </div>
-
-        
       </div>
+      
 
       <div class="container content">
         {{ content }}  

@@ -1,6 +1,6 @@
 # Setup
-title:               IEEE/RSJ IROS WS -  Building Safe Robots Workshop  
-tagline:             'A Holistic Integrated View on Safety from Modelling, Control & Implementation'
+title:               IEEE/RSJ IROS WS -  Building Safe Robots  
+tagline:             'A Holistic Integrated View on Safety'
 description:         'A reserved <a href="https://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
 url:                 http://lanyon.getpoole.com
 baseurl:             ""
