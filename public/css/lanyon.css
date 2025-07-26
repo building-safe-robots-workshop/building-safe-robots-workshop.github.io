@@ -118,6 +118,11 @@ h2, h3, h4, h5, h6 {
     max-width: 38rem;
   }
 }
+@media (min-width: 64em) {
+  .container {
+    max-width: 42rem; /* Slightly wider on large screens to utilize the extra space */
+  }
+}
 
 
 /*
@@ -588,6 +593,63 @@ a.pagination-item:hover {
 /* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
+}
+
+/* Auto-open sidebar on larger screens but keep toggle functionality */
+@media (min-width: 64em) {
+  /* Position toggle button just to the right of the sidebar */
+  .sidebar-toggle {
+    position: fixed;
+    left: 14.5rem; /* Just to the right of the 14rem sidebar */
+    z-index: 1001; /* Ensure it's above sidebar */
+  }
+  
+  /* When sidebar is closed, move toggle back to the left */
+  #sidebar-checkbox:not(:checked) ~ .sidebar-toggle {
+    left: 1rem; /* Normal position when sidebar is closed */
+  }
+  
+  /* When sidebar is open, keep toggle to the right of sidebar */
+  #sidebar-checkbox:checked ~ .sidebar-toggle {
+    left: 14.5rem; /* Just to the right of sidebar */
+  }
+  
+  /* Override the transform for toggle button on large screens */
+  #sidebar-checkbox:checked ~ .sidebar-toggle,
+  #sidebar-checkbox:not(:checked) ~ .sidebar-toggle {
+    -webkit-transform: translateX(0) !important;
+        -ms-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+  }
+  
+  /* Adjust content positioning when sidebar is open */
+  #sidebar-checkbox:checked ~ .wrap {
+    -webkit-transform: translateX(14rem);
+        -ms-transform: translateX(14rem);
+            transform: translateX(14rem);
+    /* Adjust the width to account for the sidebar */
+    width: calc(100% - 14rem);
+  }
+  
+  #sidebar-checkbox:not(:checked) ~ .wrap {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    width: 100%;
+  }
+  
+  /* Center the container in the available space */
+  #sidebar-checkbox:checked ~ .wrap .container {
+    max-width: 50rem; /* Reasonable max width for content */
+    margin: 0 auto; /* Center the content */
+    padding: 0 2rem; /* Add some horizontal padding */
+  }
+  
+  #sidebar-checkbox:not(:checked) ~ .wrap .container {
+    max-width: 50rem; /* Same max width when sidebar is closed */
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
 }
 
 
