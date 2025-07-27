@@ -3,10 +3,36 @@ layout: default
 title: Organizers
 ---
 
+<style>
+.organizer-row {
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.organizer-row:nth-child(even) {
+  background: linear-gradient(135deg, transparent 0%, rgba(144, 86, 86, 0.08) 50%, rgba(144, 86, 86, 0.16) 100%);
+}
+
+.organizer-row:nth-child(odd) {
+  background: linear-gradient(135deg, rgba(144, 86, 86, 0.16) 0%, rgba(144, 86, 86, 0.08) 50%, transparent 100%);
+}
+
+.organizer-row .info {
+  margin-bottom: 0;
+}
+
+/* Make NOKOV row fully transparent */
+.organizer-row:last-child {
+  background: transparent !important;
+}
+</style>
+
 <h1>Organizers</h1>
 <hr class="section-divider">
 
-<p>The workshop is organized by a multidisciplinary team of researchers and practitioners from leading institutions:</p>
+<p>The workshop is organized by a multidisciplinary team of researchers and practitioners from leading institutions.</p>
 
 
 
