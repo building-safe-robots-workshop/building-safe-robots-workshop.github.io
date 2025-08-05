@@ -485,14 +485,14 @@ function finalizeSubmission() {
     // Create comprehensive submission body with all form data
     let submissionBody = `**Paper Title:** ${formData.title || ''}\n\n`;
     submissionBody += `**Authors:** ${formData.authors || ''}\n\n`;
-    submissionBody += `**Corresponding Email:** ${formData['corresponding-email'] || ''}\n\n`;
+    submissionBody += `**Corresponding Email:** ${formData['corresponding-email'] || ''}\n\n\n`;
     submissionBody += `**Submission Type:** ${formData['submission-type'] || ''}\n\n`;
     submissionBody += `**Primary Research Area:** ${formData['research-area'] || ''}\n\n`;
-    submissionBody += `**Secondary Research Area:** ${formData['secondary-research-area'] || ''}\n\n`;
+    submissionBody += `**Secondary Research Area:** ${formData['secondary-research-area'] || ''}\n\n\n\n`;
     submissionBody += `**Abstract:** ${formData.abstract || ''}\n\n`;
-    submissionBody += `**Keywords:** ${formData.keywords || ''}\n\n`;
-    submissionBody += `**Feedback Desired:** ${formData['feedback-desired'] || ''}\n\n`;
-    submissionBody += `**Workshop Topics:** ${formData['workshop-topics'] || ''}\n\n`;
+    submissionBody += `**Keywords:** ${formData.keywords || ''}\n\n\n\n`;
+    submissionBody += `**Feedback Desired:** ${formData['feedback-desired'] || ''}\n\n\n`;
+    submissionBody += `**Workshop Topics:** ${formData['workshop-topics'] || ''}\n\n\n`;
     submissionBody += `**Safety Challenges Opinion:** ${formData['safety-challenges'] || 'Not provided'}\n\n`;
     submissionBody += `**Critical Technology Opinion:** ${formData['critical-technology'] || 'Not provided'}\n\n`;
     submissionBody += `**Student Paper:** ${formData['student-paper'] || ''}\n\n`;
