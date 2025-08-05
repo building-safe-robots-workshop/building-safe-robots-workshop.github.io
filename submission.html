@@ -328,7 +328,6 @@ Jane Smith &lt;TU Munich&gt;;" required></textarea>
         <div id="submissionSummary"></div>
         <p style="margin-top: 1rem;"><strong>What happens next:</strong></p>
         <ul style="margin-bottom: 0;">
-          <li>A GitHub issue will be created with all your form information</li>
           <li>You'll receive an automated confirmation email</li>
           <li>Workshop organizers will be notified of your submission</li>
         </ul>
@@ -355,7 +354,7 @@ Jane Smith &lt;TU Munich&gt;;" required></textarea>
         <li>Camera-ready deadline: October 10, 2025</li>
       </ul>
       
-      <p>Questions? Contact us at <a href="mailto:luis.figueredo@tum.de">luis.figueredo@tum.de</a></p>
+      <p>Questions? Contact us at <a href="mailto:figueredo@ieee.org">figueredo@ieee.org</a></p>
     </div>
   </div>
 </div>
@@ -401,36 +400,9 @@ document.getElementById('submissionForm').addEventListener('submit', function(e)
 
 // Function to submit paper
 function submitPaper() {
-    const formData = window.submissionData || {};
-    
-    // Create GitHub issue URL for paper submission
-    const repoUrl = 'https://github.com/building-safe-robots-workshop/building-safe-robots-workshop.github.io';
-    const issueTemplate = 'paper_submission';
-    
-    // Create the submission URL with form data
-    const params = new URLSearchParams({
-        template: issueTemplate + '.md',
-        title: `Paper Submission: ${formData.title || 'Untitled'}`,
-        'paper-title': formData.title || '',
-        'authors': formData.authors || '',
-        'corresponding-email': formData['corresponding-email'] || '',
-        'submission-type': formData['submission-type'] || '',
-        'research-area': formData['research-area'] || '',
-        'secondary-research-area': formData['secondary-research-area'] || '',
-        'abstract': formData.abstract || '',
-        'keywords': formData.keywords || '',
-        'feedback-desired': formData['feedback-desired'] || '',
-        'workshop-topics': formData['workshop-topics'] || '',
-        'safety-challenges': formData['safety-challenges'] || '',
-        'critical-technology': formData['critical-technology'] || '',
-        'student-paper': formData['student-paper'] || '',
-        'additional-comments': formData['additional-comments'] || ''
-    });
-    
-    const submissionUrl = `${repoUrl}/issues/new?${params.toString()}`;
-    
-    // Open the submission URL in a new tab
-    window.open(submissionUrl, '_blank');
+    // Open SharePoint folder for paper submissions
+    const paperSubmissionUrl = 'https://uniofnottm-my.sharepoint.com/:f:/g/personal/luis_figueredo_nottingham_ac_uk/EuLK-n2uhyNCs-5agZFbhFkBU8fzg0ngrfwnfW7nUaadAg';
+    window.open(paperSubmissionUrl, '_blank');
     
     // Mark paper as submitted
     paperSubmitted = true;
@@ -440,25 +412,9 @@ function submitPaper() {
 
 // Function to submit video
 function submitVideo() {
-    const formData = window.submissionData || {};
-    
-    // Create GitHub issue URL for video submission
-    const repoUrl = 'https://github.com/building-safe-robots-workshop/building-safe-robots-workshop.github.io';
-    const issueTemplate = 'video_submission';
-    
-    // Create the submission URL with form data
-    const params = new URLSearchParams({
-        template: issueTemplate + '.md',
-        title: `Video Submission: ${formData.title || 'Untitled'}`,
-        'paper-title': formData.title || '',
-        'authors': formData.authors || '',
-        'corresponding-email': formData['corresponding-email'] || ''
-    });
-    
-    const submissionUrl = `${repoUrl}/issues/new?${params.toString()}`;
-    
-    // Open the submission URL in a new tab
-    window.open(submissionUrl, '_blank');
+    // Open SharePoint folder for video submissions
+    const videoSubmissionUrl = 'https://uniofnottm-my.sharepoint.com/:f:/g/personal/luis_figueredo_nottingham_ac_uk/EtfX3bUXgrhBgYZ7GVxIOTYBYNPJmWHpaHuadsx1HKt2fQ';
+    window.open(videoSubmissionUrl, '_blank');
     
     // Mark video as submitted
     videoSubmitted = true;
@@ -560,10 +516,10 @@ function finalizeSubmission() {
     document.getElementById('finalConfirmationSection').innerHTML = `
         <div style="text-align: center; padding: 2rem; background: #d4edda; border-radius: 4px; border-left: 4px solid #28a745;">
             <h3 style="color: #155724; margin-top: 0;">🎉 Official Submission Created!</h3>
-            <p style="color: #155724; margin-bottom: 1rem;">Your GitHub submission issue has been opened in a new tab. Please complete the submission process there.</p>
+            <p style="color: #155724; margin-bottom: 1rem;">🎯 Final Submission Confirmation</p>
+            <p style="color: #155724; margin-bottom: 1rem;">Great! You have submitted your materials. Now click the button below to create your official submission with all form information.</p>
             <p style="color: #155724; margin-bottom: 0;"><strong>Next Steps:</strong></p>
             <ul style="color: #155724; text-align: left; max-width: 500px; margin: 1rem auto 0;">
-                <li>Complete the GitHub issue form that opened</li>
                 <li>Upload your paper PDF file as requested</li>
                 ${videoSubmitted ? '<li>Upload your video file if prepared</li>' : ''}
                 <li>You will receive a confirmation email within 24 hours</li>
