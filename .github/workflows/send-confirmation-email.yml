@@ -1,0 +1,143 @@
+name: Send Submission Confirmation Email
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  send-confirmation:
+    if: contains(github.event.issue.labels.*.name, 'paper-submission') || contains(github.event.issue.labels.*.name, 'video-submission')
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Extract email from issue
+      id: extract-email
+      run: |
+        # Extract email from issue body
+        EMAIL=$(echo "${{ github.event.issue.body }}" | grep -i "email:" | sed 's/.*email:\s*//' | head -1 | tr -d ' ')
+        echo "email=$EMAIL" >> $GITHUB_OUTPUT
+        
+        # Extract submission type
+        if [[ "${{ github.event.issue.title }}" == *"[PAPER]"* ]]; then
+          echo "type=paper" >> $GITHUB_OUTPUT
+        elif [[ "${{ github.event.issue.title }}" == *"[VIDEO]"* ]]; then
+          echo "type=video" >> $GITHUB_OUTPUT
+        else
+          echo "type=general" >> $GITHUB_OUTPUT
+        fi
+        
+        # Extract paper title
+        TITLE=$(echo "${{ github.event.issue.body }}" | grep -i "paper title:" | sed 's/.*paper title:\s*//' | head -1)
+        echo "title=$TITLE" >> $GITHUB_OUTPUT
+
+    - name: Send confirmation email
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: "IROS 2025 Workshop Submission Confirmation - Building Safe Robots"
+        to: ${{ steps.extract-email.outputs.email }}
+        from: "IROS 2025 Workshop <${{ secrets.EMAIL_USERNAME }}>"
+        html_body: |
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <style>
+                  body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+                  .header { background: #007cba; color: white; padding: 20px; text-align: center; }
+                  .content { padding: 20px; background: #f9f9f9; }
+                  .footer { background: #333; color: white; padding: 15px; text-align: center; font-size: 12px; }
+                  .highlight { background: #e8f5e8; padding: 15px; border-left: 4px solid #28a745; margin: 15px 0; }
+                  .important { background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 15px 0; }
+              </style>
+          </head>
+          <body>
+              <div class="header">
+                  <h1>IROS 2025 Workshop on Building Safe Robots</h1>
+                  <h2>Submission Confirmation</h2>
+              </div>
+              
+              <div class="content">
+                  <h3>Dear Researcher,</h3>
+                  
+                  <p>Thank you for your submission to the <strong>IROS 2025 Workshop on Building Safe Robots: A Holistic Integrated View on Safety from Modelling, Control & Implementation</strong>.</p>
+                  
+                  <div class="highlight">
+                      <h4>📄 Submission Details</h4>
+                      <p><strong>Submission Type:</strong> ${{ steps.extract-email.outputs.type == 'paper' && 'Paper Submission' || steps.extract-email.outputs.type == 'video' && 'Video Submission' || 'General Submission' }}</p>
+                      <p><strong>Issue Number:</strong> #${{ github.event.issue.number }}</p>
+                      <p><strong>Submission Date:</strong> ${{ github.event.issue.created_at }}</p>
+                      ${{ steps.extract-email.outputs.title != '' && format('<p><strong>Paper Title:</strong> {0}</p>', steps.extract-email.outputs.title) || '' }}
+                  </div>
+                  
+                  <h4>📅 Important Dates</h4>
+                  <ul>
+                      <li><strong>Submission Deadline:</strong> September 20, 2025</li>
+                      <li><strong>Notification of Acceptance:</strong> October 5, 2025</li>
+                      <li><strong>Camera-ready Submission:</strong> October 10, 2025</li>
+                      <li><strong>Workshop Date:</strong> October 20, 2025</li>
+                  </ul>
+                  
+                  <div class="important">
+                      <h4>🔍 Next Steps</h4>
+                      <p>Your submission will be reviewed by our expert panel. You can track the status of your submission by visiting:</p>
+                      <p><strong>GitHub Issue:</strong> <a href="${{ github.event.issue.html_url }}">${{ github.event.issue.html_url }}</a></p>
+                  </div>
+                  
+                  <h4>🏆 Awards</h4>
+                  <ul>
+                      <li><strong>Best Student Paper Award:</strong> $300 USD (sponsored by NOKOV)</li>
+                      <li><strong>Best Video Award:</strong> Recognition for impactful safety demonstrations</li>
+                  </ul>
+                  
+                  <h4>📍 Workshop Details</h4>
+                  <ul>
+                      <li><strong>Date:</strong> October 20, 2025</li>
+                      <li><strong>Time:</strong> 8:00 AM - 6:00 PM</li>
+                      <li><strong>Location:</strong> Pressroom B, Hangzhou, China</li>
+                      <li><strong>Conference:</strong> IEEE/RSJ IROS 2025</li>
+                  </ul>
+                  
+                  <p>If you have any questions or concerns, please don't hesitate to contact us:</p>
+                  <ul>
+                      <li><strong>Email:</strong> <a href="mailto:luis.figueredo@tum.de">luis.figueredo@tum.de</a></li>
+                      <li><strong>Website:</strong> <a href="https://building-safe-robots-workshop.github.io/">https://building-safe-robots-workshop.github.io/</a></li>
+                  </ul>
+                  
+                  <p>Thank you for contributing to the advancement of safe robotics!</p>
+                  
+                  <p>Best regards,<br>
+                  <strong>The Organizing Committee</strong><br>
+                  IROS 2025 Workshop on Building Safe Robots</p>
+              </div>
+              
+              <div class="footer">
+                  <p>This is an automated confirmation email. Please do not reply to this email.</p>
+                  <p>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2025)</p>
+              </div>
+          </body>
+          </html>
+
+    - name: Add confirmation label
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.addLabels({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            labels: ['email-sent', 'confirmed']
+          });
+
+    - name: Add comment to issue
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: context.issue.number,
+            body: '✅ **Confirmation email sent** to the corresponding author.\n\n📧 Email sent to: `${{ steps.extract-email.outputs.email }}`\n📅 Sent at: `${{ github.event.issue.created_at }}`\n\n---\n*This is an automated message from the workshop submission system.*'
+          });

@@ -1,0 +1,574 @@
+---
+layout: default
+title: Submission Form
+---
+
+<style>
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #007cba;
+  box-shadow: 0 0 0 2px rgba(0, 124, 186, 0.1);
+}
+
+.submit-btn {
+  background: #007cba;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background: #005a87;
+}
+
+.submit-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.submission-links {
+  display: none;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #e8f5e8;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+}
+
+.submission-links h3 {
+  color: #155724;
+  margin-top: 0;
+}
+
+.submission-links a {
+  display: inline-block;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 0.75rem 1.5rem;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.submission-links a:hover {
+  background: #1e7e34;
+}
+
+.required {
+  color: #dc3545;
+}
+
+.confirm-submit-btn {
+  background: #28a745;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1rem;
+}
+
+.confirm-submit-btn:hover:not(:disabled) {
+  background: #1e7e34;
+}
+
+.confirm-submit-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+</style>
+
+<h1>Workshop Submission Form</h1>
+<hr class="section-divider">
+
+<div class="form-container">
+  <div class="intro-description">
+    <h3>Submit Your Contribution</h3>
+    <p>Welcome to the IROS 2025 Workshop on Building Safe Robots submission portal. We invite you to submit your research contributions for our interactive poster sessions and potential teaser talks.</p>
+    
+    <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+      <div style="flex: 1; min-width: 300px;">
+        <p><strong>Submission Guidelines:</strong></p>
+        <ul>
+          <li>Submit a short abstract (maximum 2 pages)</li>
+          <li>All accepted submissions will be presented as posters</li>
+          <li>Selected submissions will be invited for teaser talks</li>
+          <li>Authors are encouraged to participate in our Interdisciplinary Impact Clinics</li>
+        </ul>
+      </div>
+      <div style="flex: 0 0 auto; padding: 1rem; background: #f0f8ff; border-radius: 4px; border-left: 4px solid #007cba;">
+        <p style="margin: 0;"><strong>For more information, see the <a href="{{ site.baseurl }}/cfp/" style="color: #007cba;">Call for Papers</a></strong></p>
+      </div>
+    </div>
+    
+    <p style="color: #dc3545; font-weight: bold; font-size: 1.1rem; margin: 1.5rem 0;">
+      📅 <strong>Submission Deadline: September 20, 2025</strong>
+    </p>
+    
+    <p style="background: #fff3cd; padding: 0.75rem; border-radius: 4px; border-left: 4px solid #ffc107;">
+      <strong>Important:</strong> Please upload a <code>.pdf</code> file only. Submissions in other formats will not be reviewed.
+    </p>
+    
+    <p><strong>Important:</strong> Please complete this preliminary form first. After submission, you'll receive links to submit your paper and optional video demonstration.</p>
+  </div>
+
+  <form id="submissionForm">
+    <div class="form-group">
+      <label for="title">Paper Title <span class="required">*</span></label>
+      <input type="text" id="title" name="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="authors">Authors (Full names and affiliations) <span class="required">*</span></label>
+      <textarea id="authors" name="authors" placeholder="Author &lt;Institution&gt;;
+Author &lt;Institution&gt;;
+
+John Doe &lt;University of Example&gt;;
+Jane Smith &lt;TU Munich&gt;;" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="corresponding-email">Corresponding Author Email <span class="required">*</span></label>
+      <input type="email" id="corresponding-email" name="corresponding-email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="submission-type">Submission Type <span class="required">*</span></label>
+      <select id="submission-type" name="submission-type" required>
+        <option value="">Please select...</option>
+        <option value="original-contribution">Original Contribution</option>
+        <option value="case-study">Case Study</option>
+        <option value="previously-published">Previously Published Paper</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="research-area">Primary Research Area <span class="required">*</span></label>
+      <select id="research-area" name="research-area" required>
+        <option value="">Please select...</option>
+        <option value="control-perception">Control and Perception</option>
+        <option value="modeling-design-learning">Modeling, Design, Learning</option>
+        <option value="deploying-testing">Deploying and Testing</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="secondary-research-area">Secondary Research Area <span class="required">*</span></label>
+      <select id="secondary-research-area" name="secondary-research-area" required>
+        <option value="">Please select...</option>
+        <option value="biomechanics-safety">Biomechanics and Cognitive Safety Perception</option>
+        <option value="risk-modeling">Modeling and Evaluation of Risk and Safety</option>
+        <option value="soft-materials">Soft Materials and Compliant Actuators</option>
+        <option value="safe-design">Safe-aware Robot Design and Mechanism</option>
+        <option value="regulatory">Regulatory Frameworks and Certification</option>
+        <option value="collision-avoidance">Collision Avoidance and Mitigation</option>
+        <option value="reflex-strategies">Reflex Strategies and Impact-Aware Manipulation</option>
+        <option value="perception-safety">Perception for Safety</option>
+        <option value="human-modeling">Human Modeling</option>
+        <option value="ai-driven-safety">AI-Driven Safety</option>
+        <option value="safety-genai">Safety of GenAI Systems</option>
+        <option value="other">Other (please specify in abstract)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="abstract">Abstract (300 words maximum) <span class="required">*</span></label>
+      <textarea id="abstract" name="abstract" placeholder="Please provide a concise abstract describing your work, methodology, and key contributions..." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="keywords">Keywords (2-4 keywords, comma-separated) <span class="required">*</span></label>
+      <input type="text" id="keywords" name="keywords" placeholder="safety, robotics, human-robot interaction, ..." required>
+    </div>
+
+    <div class="form-group">
+      <label for="feedback-desired">What key feedback would you like to receive from your paper? <span class="required">*</span></label>
+      <textarea id="feedback-desired" name="feedback-desired" placeholder="Be as specific as possible. Comment on the area you'd like feedback on (e.g., application-oriented questions, methods, validity/implementation, specific questions that can lead to insights for refining or advancing your research ideas)..." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="workshop-topics">What key topics/themes would you like to be addressed in the workshop discussions with speakers? <span class="required">*</span></label>
+      <textarea id="workshop-topics" name="workshop-topics" placeholder="Specify topics or themes you'd like the speakers to address during workshop discussions..." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="safety-challenges">Opinion: What are the key challenges in Safety Robotics?</label>
+      <textarea id="safety-challenges" name="safety-challenges" placeholder="Share your perspective on the main challenges facing safety in robotics..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="critical-technology">Which technology is most critical for enabling safety systems?</label>
+      <textarea id="critical-technology" name="critical-technology" placeholder="Identify and explain which technology you believe is most critical for safety systems..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="student-paper">Is this a student paper? <span class="required">*</span></label>
+      <select id="student-paper" name="student-paper" required>
+        <option value="">Please select...</option>
+        <option value="no">No</option>
+        <option value="yes">Yes</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="additional-comments">Additional Comments or Questions</label>
+      <textarea id="additional-comments" name="additional-comments" placeholder="Any additional information, special requirements, or questions for the organizers..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Initial Application</button>
+  </form>
+
+  <!-- Submission Options Section (shown after form submission) -->
+  <div id="submissionOptionsSection" style="display: none; margin-top: 2rem;">
+    <div style="padding: 1.5rem; background: #e8f5e8; border-radius: 8px; border-left: 4px solid #28a745; margin-bottom: 2rem;">
+      <h3>✅ Initial Application Submitted Successfully!</h3>
+      <p>Thank you for your submission. Please confirm your submission materials are ready:</p>
+      <div style="background: #f0f8ff; padding: 1rem; border-radius: 4px; margin-top: 1rem;">
+        <p style="margin: 0;"><strong>Note:</strong> Click the submission buttons below to upload your files. The final confirmation button will create your official workshop submission with all form data.</p>
+      </div>
+    </div>
+
+    <!-- Paper Submission Section -->
+    <div style="background: #e8f5e8; padding: 1.5rem; border-radius: 4px; border-left: 4px solid #28a745; margin: 1rem 0;">
+      <h4 style="margin-top: 0; color: #155724;">📄 Paper Submission (Required)</h4>
+      <div style="background: #fff3cd; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+        <p><strong>File Naming Format:</strong> <code>paper_IROS25_WS_LASTNAME_ShortTitle.pdf</code><br>
+        <strong>Example:</strong> <code>paper_IROS25_WS_Doe_incredibleMethodForRobots.pdf</code></p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>PDF format only (max 2 pages)</li>
+        <li>Maximum file size: 10 MB</li>
+        <li>Follow the file naming convention above</li>
+      </ul>
+      <a href="#" id="paperSubmissionLink" onclick="submitPaper()" 
+         style="display: inline-block; margin: 0.5rem 1rem 0.5rem 0; padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 4px;">📄 Submit Paper</a>
+      <span id="paperSubmittedCheck" style="display: none; color: #28a745; font-weight: bold; margin-left: 1rem;">✅ Paper Submitted</span>
+    </div>
+
+    <!-- Video Submission Section -->
+    <div style="background: #e3f2fd; padding: 1.5rem; border-radius: 4px; border-left: 4px solid #2196f3; margin: 1rem 0;">
+      <h4 style="margin-top: 0; color: #1565c0;">🎥 Video Submission (Optional)</h4>
+      <div style="background: #fff3cd; padding: 1rem; border-radius: 4px; margin-bottom: 1rem;">
+        <p><strong>File Naming Format:</strong> <code>video_IROS25_WS_LASTNAME_ShortTitle.mp4</code><br>
+        <strong>Example:</strong> <code>video_IROS25_WS_Doe_incredibleMethodForRobots.mp4</code></p>
+      </div>
+      <p><strong>Requirements:</strong></p>
+      <ul>
+        <li>Video format: MP4, MOV, or AVI</li>
+        <li>Maximum file size: 20 MB</li>
+        <li>Follow the file naming convention above</li>
+      </ul>
+      <div style="margin-bottom: 1rem;">
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: bold;">
+          <input type="checkbox" id="skipVideoSubmission" style="transform: scale(1.2);" onchange="handleVideoSkip()">
+          Skip video submission (paper only)
+        </label>
+      </div>
+      <a href="#" id="videoSubmissionLink" onclick="submitVideo()" 
+         style="display: inline-block; margin: 0.5rem 1rem 0.5rem 0; padding: 0.75rem 1.5rem; background: #2196f3; color: white; text-decoration: none; border-radius: 4px;">🎥 Submit Video</a>
+      <span id="videoSubmittedCheck" style="display: none; color: #2196f3; font-weight: bold; margin-left: 1rem;">✅ Video Submitted</span>
+      <span id="videoSkippedCheck" style="display: none; color: #6c757d; font-weight: bold; margin-left: 1rem;">➖ Video Skipped</span>
+    </div>
+
+    <!-- Final Confirmation Section (appears after submissions) -->
+    <div id="finalConfirmationSection" style="display: none; background: #fff3cd; padding: 1.5rem; border-radius: 4px; border-left: 4px solid #ffc107; margin: 1rem 0;">
+      <h4 style="margin-top: 0; color: #856404;">🎯 Final Submission Confirmation</h4>
+      <p>Great! You have submitted your materials. Now click the button below to create your official GitHub submission with all form information:</p>
+      
+      <div style="background: #f8f9fa; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
+        <p><strong>Submission Summary:</strong></p>
+        <div id="submissionSummary"></div>
+        <p style="margin-top: 1rem;"><strong>What happens next:</strong></p>
+        <ul style="margin-bottom: 0;">
+          <li>A GitHub issue will be created with all your form information</li>
+          <li>You'll receive an automated confirmation email</li>
+          <li>Workshop organizers will be notified of your submission</li>
+        </ul>
+      </div>
+
+      <div style="margin: 1rem 0;">
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: bold;">
+          <input type="checkbox" id="finalConfirmationCheck" style="transform: scale(1.2);" onchange="handleFinalConfirmation()">
+          I confirm that I have prepared all required materials and am ready to create my official workshop submission
+        </label>
+      </div>
+
+      <button type="button" class="confirm-submit-btn" id="finalSubmitBtn" disabled onclick="finalizeSubmission()">
+        🚀 Create Official Submission
+      </button>
+    </div>
+
+    <div style="margin-top: 1.5rem; padding: 1rem; background: #f0f8ff; border-radius: 4px;">
+      <p><strong>Important Notes:</strong></p>
+      <ul>
+        <li>You will receive a confirmation email within 24 hours</li>
+        <li>Review process will begin after the submission deadline (September 20, 2025)</li>
+        <li>Notification of acceptance: October 5, 2025</li>
+        <li>Camera-ready deadline: October 10, 2025</li>
+      </ul>
+      
+      <p>Questions? Contact us at <a href="mailto:luis.figueredo@tum.de">luis.figueredo@tum.de</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Global state tracking
+let paperSubmitted = false;
+let videoSubmitted = false;
+let videoSkipped = false;
+
+document.getElementById('submissionForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const formObject = {};
+    for (let [key, value] of formData.entries()) {
+        formObject[key] = value;
+    }
+    
+    // Validate keywords (2-4 keywords)
+    const keywords = formObject['keywords'];
+    if (keywords) {
+        const keywordCount = keywords.split(',').map(k => k.trim()).filter(k => k.length > 0).length;
+        if (keywordCount < 2 || keywordCount > 4) {
+            alert('Please provide between 2 and 4 keywords, separated by commas.');
+            return;
+        }
+    }
+    
+    // Store form data for later use in submission URLs
+    window.submissionData = formObject;
+    
+    // Hide form and show submission options
+    this.style.display = 'none';
+    document.getElementById('submissionOptionsSection').style.display = 'block';
+    
+    // Scroll to the submission options
+    document.getElementById('submissionOptionsSection').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+});
+
+// Function to submit paper
+function submitPaper() {
+    const formData = window.submissionData || {};
+    
+    // Create GitHub issue URL for paper submission
+    const repoUrl = 'https://github.com/building-safe-robots-workshop/building-safe-robots-workshop.github.io';
+    const issueTemplate = 'paper_submission';
+    
+    // Create the submission URL with form data
+    const params = new URLSearchParams({
+        template: issueTemplate + '.md',
+        title: `Paper Submission: ${formData.title || 'Untitled'}`,
+        'paper-title': formData.title || '',
+        'authors': formData.authors || '',
+        'corresponding-email': formData['corresponding-email'] || '',
+        'submission-type': formData['submission-type'] || '',
+        'research-area': formData['research-area'] || '',
+        'secondary-research-area': formData['secondary-research-area'] || '',
+        'abstract': formData.abstract || '',
+        'keywords': formData.keywords || '',
+        'feedback-desired': formData['feedback-desired'] || '',
+        'workshop-topics': formData['workshop-topics'] || '',
+        'safety-challenges': formData['safety-challenges'] || '',
+        'critical-technology': formData['critical-technology'] || '',
+        'student-paper': formData['student-paper'] || '',
+        'additional-comments': formData['additional-comments'] || ''
+    });
+    
+    const submissionUrl = `${repoUrl}/issues/new?${params.toString()}`;
+    
+    // Open the submission URL in a new tab
+    window.open(submissionUrl, '_blank');
+    
+    // Mark paper as submitted
+    paperSubmitted = true;
+    document.getElementById('paperSubmittedCheck').style.display = 'inline';
+    checkSubmissionComplete();
+}
+
+// Function to submit video
+function submitVideo() {
+    const formData = window.submissionData || {};
+    
+    // Create GitHub issue URL for video submission
+    const repoUrl = 'https://github.com/building-safe-robots-workshop/building-safe-robots-workshop.github.io';
+    const issueTemplate = 'video_submission';
+    
+    // Create the submission URL with form data
+    const params = new URLSearchParams({
+        template: issueTemplate + '.md',
+        title: `Video Submission: ${formData.title || 'Untitled'}`,
+        'paper-title': formData.title || '',
+        'authors': formData.authors || '',
+        'corresponding-email': formData['corresponding-email'] || ''
+    });
+    
+    const submissionUrl = `${repoUrl}/issues/new?${params.toString()}`;
+    
+    // Open the submission URL in a new tab
+    window.open(submissionUrl, '_blank');
+    
+    // Mark video as submitted
+    videoSubmitted = true;
+    document.getElementById('videoSubmittedCheck').style.display = 'inline';
+    checkSubmissionComplete();
+}
+
+// Function to handle video skip
+function handleVideoSkip() {
+    const skipCheckbox = document.getElementById('skipVideoSubmission');
+    if (skipCheckbox.checked) {
+        videoSkipped = true;
+        document.getElementById('videoSkippedCheck').style.display = 'inline';
+        document.getElementById('videoSubmissionLink').style.opacity = '0.5';
+        document.getElementById('videoSubmissionLink').style.pointerEvents = 'none';
+        checkSubmissionComplete();
+    } else {
+        videoSkipped = false;
+        document.getElementById('videoSkippedCheck').style.display = 'none';
+        document.getElementById('videoSubmissionLink').style.opacity = '1';
+        document.getElementById('videoSubmissionLink').style.pointerEvents = 'auto';
+        checkSubmissionComplete();
+    }
+}
+
+// Function to check if submission is complete and show final confirmation
+function checkSubmissionComplete() {
+    if (paperSubmitted && (videoSubmitted || videoSkipped)) {
+        showFinalConfirmation();
+    }
+}
+
+// Function to show final confirmation section
+function showFinalConfirmation() {
+    const summaryDiv = document.getElementById('submissionSummary');
+    const formData = window.submissionData || {};
+    
+    let summary = `<ul>`;
+    summary += `<li>✅ <strong>Paper ready:</strong> ${formData.title || 'Untitled'}</li>`;
+    if (videoSubmitted) {
+        summary += `<li>✅ <strong>Video ready:</strong> Demo video prepared</li>`;
+    } else if (videoSkipped) {
+        summary += `<li>➖ <strong>Video submission:</strong> Skipped</li>`;
+    }
+    summary += `</ul>`;
+    
+    summaryDiv.innerHTML = summary;
+    document.getElementById('finalConfirmationSection').style.display = 'block';
+    
+    // Scroll to final confirmation
+    document.getElementById('finalConfirmationSection').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+// Function to handle final confirmation checkbox
+function handleFinalConfirmation() {
+    const checkbox = document.getElementById('finalConfirmationCheck');
+    const button = document.getElementById('finalSubmitBtn');
+    button.disabled = !checkbox.checked;
+}
+
+// Function to finalize submission
+function finalizeSubmission() {
+    const formData = window.submissionData || {};
+    
+    // Build GitHub issue URLs with form data
+    const baseUrl = 'https://github.com/building-safe-robots-workshop/submissions/issues/new';
+    
+    // Create comprehensive submission body with all form data
+    let submissionBody = `**Paper Title:** ${formData.title || ''}\n\n`;
+    submissionBody += `**Authors:** ${formData.authors || ''}\n\n`;
+    submissionBody += `**Corresponding Email:** ${formData['corresponding-email'] || ''}\n\n`;
+    submissionBody += `**Submission Type:** ${formData['submission-type'] || ''}\n\n`;
+    submissionBody += `**Primary Research Area:** ${formData['research-area'] || ''}\n\n`;
+    submissionBody += `**Secondary Research Area:** ${formData['secondary-research-area'] || ''}\n\n`;
+    submissionBody += `**Abstract:** ${formData.abstract || ''}\n\n`;
+    submissionBody += `**Keywords:** ${formData.keywords || ''}\n\n`;
+    submissionBody += `**Feedback Desired:** ${formData['feedback-desired'] || ''}\n\n`;
+    submissionBody += `**Workshop Topics:** ${formData['workshop-topics'] || ''}\n\n`;
+    submissionBody += `**Safety Challenges Opinion:** ${formData['safety-challenges'] || 'Not provided'}\n\n`;
+    submissionBody += `**Critical Technology Opinion:** ${formData['critical-technology'] || 'Not provided'}\n\n`;
+    submissionBody += `**Student Paper:** ${formData['student-paper'] || ''}\n\n`;
+    submissionBody += `**Additional Comments:** ${formData['additional-comments'] || 'None'}\n\n`;
+    submissionBody += `**Video Submission:** ${videoSubmitted ? 'Yes - Video will be submitted separately' : (videoSkipped ? 'No - Video submission skipped' : 'Not specified')}\n\n`;
+    
+    // Create main submission issue
+    const submissionParams = new URLSearchParams({
+        template: 'paper-submission.md',
+        title: `Workshop Submission: ${formData.title || 'Untitled'}`,
+        body: submissionBody
+    });
+    
+    // Open the GitHub issue creation page
+    const submissionUrl = `${baseUrl}?${submissionParams.toString()}`;
+    window.open(submissionUrl, '_blank');
+    
+    // Show success message
+    document.getElementById('finalConfirmationSection').innerHTML = `
+        <div style="text-align: center; padding: 2rem; background: #d4edda; border-radius: 4px; border-left: 4px solid #28a745;">
+            <h3 style="color: #155724; margin-top: 0;">🎉 Official Submission Created!</h3>
+            <p style="color: #155724; margin-bottom: 1rem;">Your GitHub submission issue has been opened in a new tab. Please complete the submission process there.</p>
+            <p style="color: #155724; margin-bottom: 0;"><strong>Next Steps:</strong></p>
+            <ul style="color: #155724; text-align: left; max-width: 500px; margin: 1rem auto 0;">
+                <li>Complete the GitHub issue form that opened</li>
+                <li>Upload your paper PDF file as requested</li>
+                ${videoSubmitted ? '<li>Upload your video file if prepared</li>' : ''}
+                <li>You will receive a confirmation email within 24 hours</li>
+            </ul>
+        </div>
+    `;
+}
+</script>
