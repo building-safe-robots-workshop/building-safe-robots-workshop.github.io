@@ -160,6 +160,7 @@ title: Submission Form
   </div>
 
   <form id="submissionForm">
+      <br/>
     <div class="form-group">
       <label for="title">Paper Title <span class="required">*</span></label>
       <input type="text" id="title" name="title" required>
@@ -177,7 +178,10 @@ Jane Smith &lt;TU Munich&gt;;" required></textarea>
     <div class="form-group">
       <label for="corresponding-email">Corresponding Author Email <span class="required">*</span></label>
       <input type="email" id="corresponding-email" name="corresponding-email" required>
+      <br/>  
+      <br/>
     </div>
+    
 
     <div class="form-group">
       <label for="submission-type">Submission Type <span class="required">*</span></label>
@@ -216,6 +220,8 @@ Jane Smith &lt;TU Munich&gt;;" required></textarea>
         <option value="safety-genai">Safety of GenAI Systems</option>
         <option value="other">Other (please specify in abstract)</option>
       </select>
+      <br/>  
+            <br/>  
     </div>
 
     <div class="form-group">
@@ -226,6 +232,8 @@ Jane Smith &lt;TU Munich&gt;;" required></textarea>
     <div class="form-group">
       <label for="keywords">Keywords (2-4 keywords, comma-separated) <span class="required">*</span></label>
       <input type="text" id="keywords" name="keywords" placeholder="safety, robotics, human-robot interaction, ..." required>
+            <br/>  
+      <br/>
     </div>
 
     <div class="form-group">
@@ -485,14 +493,14 @@ function finalizeSubmission() {
     // Create comprehensive submission body with all form data
     let submissionBody = `**Paper Title:** ${formData.title || ''}\n\n`;
     submissionBody += `**Authors:** ${formData.authors || ''}\n\n`;
-    submissionBody += `**Corresponding Email:** ${formData['corresponding-email'] || ''}\n\n\n`;
+    submissionBody += `**Corresponding Email:** ${formData['corresponding-email'] || ''}\n\n`;
     submissionBody += `**Submission Type:** ${formData['submission-type'] || ''}\n\n`;
     submissionBody += `**Primary Research Area:** ${formData['research-area'] || ''}\n\n`;
-    submissionBody += `**Secondary Research Area:** ${formData['secondary-research-area'] || ''}\n\n\n\n`;
+    submissionBody += `**Secondary Research Area:** ${formData['secondary-research-area'] || ''}\n\n`;
     submissionBody += `**Abstract:** ${formData.abstract || ''}\n\n`;
-    submissionBody += `**Keywords:** ${formData.keywords || ''}\n\n\n\n`;
-    submissionBody += `**Feedback Desired:** ${formData['feedback-desired'] || ''}\n\n\n`;
-    submissionBody += `**Workshop Topics:** ${formData['workshop-topics'] || ''}\n\n\n`;
+    submissionBody += `**Keywords:** ${formData.keywords || ''}\n\n`;
+    submissionBody += `**Feedback Desired:** ${formData['feedback-desired'] || ''}\n\n`;
+    submissionBody += `**Workshop Topics:** ${formData['workshop-topics'] || ''}\n\n`;
     submissionBody += `**Safety Challenges Opinion:** ${formData['safety-challenges'] || 'Not provided'}\n\n`;
     submissionBody += `**Critical Technology Opinion:** ${formData['critical-technology'] || 'Not provided'}\n\n`;
     submissionBody += `**Student Paper:** ${formData['student-paper'] || ''}\n\n`;
