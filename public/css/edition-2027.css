@@ -119,10 +119,10 @@ li::marker {
 
 .masthead {
   display:grid;
-  grid-template-columns:142px 1fr 142px;
+  grid-template-columns:142px minmax(0,1fr);
   gap:24px;
   align-items:center;
-  padding-block:28px 25px;
+  padding-block:18px;
 }
 
 .conference-logo img {
@@ -150,7 +150,7 @@ li::marker {
 .brand-subtitle {
   font-size:1rem;
   line-height:1.55;
-  margin:.65rem -30px 0;
+  margin:.45rem 0 0;
 }
 
 .brand-subtitle span {
@@ -545,15 +545,15 @@ li::marker {
 
 .agenda-row {
   display:grid;
-  grid-template-columns:76px 1fr;
+  grid-template-columns:76px minmax(0,1fr);
   gap:22px;
-  padding:28px 24px 28px 0;
+  padding:20px 0;
   border-top:1px solid var(--rule);
   margin:0;
 }
 
 .agenda-time {
-  font:600 .8rem/1.6 var(--sans);
+  font:650 1.05rem/1.6 var(--sans);
   color:var(--wine);
   padding-top:2px;
 }
@@ -572,14 +572,36 @@ li::marker {
   font-size:.95rem;
 }
 
-.agenda-row .eyebrow {
-  font-size:.7rem;
+.agenda-heading {
+  display:grid;
+  grid-template-columns:146px minmax(0,1fr);
+  gap:18px;
+  align-items:baseline;
+  margin-bottom:.65rem;
+}
+
+.agenda-heading h2 {
+  margin:0;
+}
+
+.agenda-heading .eyebrow {
+  font-size:.95rem;
+  letter-spacing:.055em;
+  margin:0;
+}
+
+.agenda-opening {
+  padding-block:16px;
+}
+
+.agenda-opening .agenda-heading {
+  margin:0;
 }
 
 .session-format {
   list-style:none;
   padding:0;
-  margin:20px 0 0;
+  margin:14px 0 0;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:14px 26px;
@@ -945,6 +967,15 @@ li::marker {
     font-size:1.13rem;
   }
 
+  .agenda-heading {
+    grid-template-columns:1fr;
+    gap:4px;
+  }
+
+  .agenda-heading .eyebrow {
+    font-size:.9rem;
+  }
+
   .agenda-break .agenda-time {
     padding-left:4px;
   }
@@ -1006,7 +1037,7 @@ li::marker {
 
 .institution-logos {
   display:grid;
-  grid-template-columns:1.1fr 1.4fr 1fr 1fr 1.1fr 1.1fr 1.1fr;
+  grid-template-columns:1.1fr 1.4fr 1fr 1fr 1.1fr 1.1fr;
   gap:24px;
 }
 
@@ -1024,7 +1055,7 @@ li::marker {
 
 @media(max-width:900px) {
   .institution-logos {
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(3,1fr);
     gap:22px 30px;
   }
 
@@ -1043,9 +1074,6 @@ li::marker {
     gap:20px 32px;
   }
 
-  .institution-logos a:last-child {
-    grid-column:1/-1;
-  }
 
   .institution-logos .logo-on-dark {
     max-width:140px;
