@@ -30,6 +30,16 @@
     });
   }
 
+  if (toggle) {
+    toggle.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        checkbox.checked = !checkbox.checked;
+        checkbox.setAttribute('data-user-controlled', 'true');
+      }
+    });
+  }
+
   // Check on page load
   handleResponsiveSidebar();
 

@@ -7,10 +7,12 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="description" content="{{ site.description | escape }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/public/css/lanyon.css">
     <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
+    <link rel="stylesheet" href="{{ '/public/css/edition-2027.css' | relative_url }}">
     <style>
       /* Add bottom padding to all pages for scrolling space */
       .container.content {
@@ -39,19 +41,19 @@
     <div class="sidebar" id="sidebar">
       <div class="sidebar-item">
         <p style="font-size: 1.1rem; line-height: 1.4;">
-          <strong style="font-size: 1.4rem;">IROS 2025 WS</strong><br>
+          <strong style="font-size: 1.4rem;">Proposed ICRA 2027 WS</strong><br>
           <strong style="font-size: 1.25rem; color: rgb(218, 191, 191);">Building Safe Robots</strong>
         </p>
       </div>
       
 
       <nav class="sidebar-nav">
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/ " style="font-weight: bold;">Home</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/" style="font-weight: bold;">Home</a>
         <a class="sidebar-nav-item" href="{{ site.baseurl }}/program/" style="font-weight: bold;">Program</a>
         <a class="sidebar-nav-item" href="{{ site.baseurl }}/speakers/" style="font-weight: bold;">Invited Speakers</a>
         <a class="sidebar-nav-item" href="{{ site.baseurl }}/cfp/" style="font-weight: bold;">Call for Papers</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/submission/" style="font-weight: bold;">Submit Paper</a>
         <a class="sidebar-nav-item" href="{{ site.baseurl }}/organizers/" style="font-weight: bold;">Organizers</a>
+        <a class="sidebar-nav-item" href="{{ site.baseurl }}/previous-workshops/" style="font-weight: bold;">Previous Workshops</a>
       </nav>
     </div>
 
@@ -61,7 +63,7 @@
           <!-- Logo wrapper -->
           <div style="flex: 0 0 auto;">
             <a href="{{ site.baseurl }}/">
-              <img src="{{ '/images/logo.png' | relative_url }}" alt="Workshop Logo" style="height: 95px; max-width: 100%;">
+              <span class="edition-mark" aria-label="Proposed ICRA 2027 workshop">ICRA<br><strong>2027</strong></span>
             </a>
           </div>
       
@@ -81,20 +83,12 @@
       </div>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <label for="sidebar-checkbox" class="sidebar-toggle" aria-label="Toggle navigation" role="button" tabindex="0"></label>
 
-    <!-- Institutional Logos Section -->
-    <div style="margin-top: 3rem; padding: 2rem 0; border-top: 2px solid #ddd;">
-      <div class="container" style="text-align: center;">
-        <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-          <img src="{{ '/images/inst_uon_1.png' | relative_url }}" alt="University of Nottingham" style="height: 55px; width: auto;">
-          <img src="{{ '/images/inst_mirmi_tum_logo.jpeg' | relative_url }}" alt="MIRMI TUM" style="height: 45px; width: auto;">
-          <img src="{{ '/images/inst_tum_2.png' | relative_url }}" alt="TUM" style="height: 70px; width: auto;">
-          <img src="{{ '/images/inst_Sjtu-logo-standard-red.png' | relative_url }}" alt="Shanghai Jiao Tong University" style="height: 55px; width: auto;">
-          <img src="{{ '/images/NOKOV_Logo.png' | relative_url }}" alt="NOKOV Motion Capture" style="height: 75px; width: auto;">
-        </div>
-      </div>
-    </div>
+    <footer class="container edition-footer">
+      <p>Proposed ICRA 2027 workshop · Full proposal in preparation</p>
+      <p><a href="{{ '/previous-workshops/' | relative_url }}">Previous Workshops</a> · <a href="mailto:figueredo@ieee.org">Contact the organizers</a></p>
+    </footer>
 
     <script src='{{ site.baseurl }}/public/js/script.js'></script>
   </body>
