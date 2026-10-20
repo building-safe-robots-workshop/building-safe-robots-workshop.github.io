@@ -3,7 +3,7 @@
 GitHub Pages source for https://building-safe-robots-workshop.github.io/.
 Repository: building-safe-robots-workshop/building-safe-robots-workshop.github.io.
 
-The root site is the proposed ICRA 2027 second edition. Acceptance, date, speakers,
+The root site is the proposed ICRA 2027 2nd workshop. Acceptance, date, speakers,
 schedule, submission details and sponsorship remain pending. Update these only
 when confirmed by the organizers.
 
@@ -47,3 +47,13 @@ portraits were sourced on 20 October 2026 from:
 Affiliations and short biographies follow the organizer-supplied proposal; Marta's
 IIT affiliation was checked against her institutional profile. Profile links on
 the organizers page provide contact details.
+
+## 2027 design
+
+Current pages use `public/css/edition-2027.css`; the 2025 snapshot keeps its
+original layout and assets. Shared dates, contacts and institution logos live
+in `_includes/`. Nine speaker placeholders are grouped into three domain blocks.
+The conference logo links directly to the official ICRA 2027 website.
+
+Content and asset provenance, including the generated Seoul illustration prompt,
+are recorded in [docs/design-sources.md](docs/design-sources.md).

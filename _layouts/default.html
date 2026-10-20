@@ -1,102 +1,37 @@
-<!DOCTYPE html>
-<html lang="en-us">
-
-
-
-
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <meta name="description" content="{{ site.description | escape }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/lanyon.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
-    <link rel="stylesheet" href="{{ '/public/css/edition-2027.css' | relative_url }}">
-    <style>
-      /* Add bottom padding to all pages for scrolling space */
-      .container.content {
-        padding-bottom: 1rem !important;
-        margin-bottom: 1rem !important;
-      }
-      
-      /* Ensure the wrap has bottom spacing too */
-      .wrap {
-        margin-bottom: 1rem;
-      }
-      
-      /* Add bottom spacing to body */
-      body {
-        margin-bottom: 1rem;
-      }
-    </style>
-  </head>
-  
-  
-  
-  
-  <body class="theme-base-08 sidebar-overlay">
-    <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
-
-    <div class="sidebar" id="sidebar">
-      <div class="sidebar-item">
-        <p style="font-size: 1.1rem; line-height: 1.4;">
-          <strong style="font-size: 1.4rem;">Proposed ICRA 2027 WS</strong><br>
-          <strong style="font-size: 1.25rem; color: rgb(218, 191, 191);">Building Safe Robots</strong>
-        </p>
-      </div>
-      
-
-      <nav class="sidebar-nav">
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/" style="font-weight: bold;">Home</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/program/" style="font-weight: bold;">Program</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/speakers/" style="font-weight: bold;">Invited Speakers</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/cfp/" style="font-weight: bold;">Call for Papers</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/organizers/" style="font-weight: bold;">Organizers</a>
-        <a class="sidebar-nav-item" href="{{ site.baseurl }}/previous-workshops/" style="font-weight: bold;">Previous Workshops</a>
-      </nav>
-    </div>
-
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container" style="display: flex; align-items: center; flex-wrap: wrap;">
-          <!-- Logo wrapper -->
-          <div style="flex: 0 0 auto;">
-            <a href="{{ site.baseurl }}/">
-              <span class="edition-mark" aria-label="Proposed ICRA 2027 workshop">ICRA<br><strong>2027</strong></span>
-            </a>
-          </div>
-      
-          <!-- Title wrapper -->
-          <div style="flex: 1; min-width: 200px; padding-left: 0.5rem;">
-            <h3 class="masthead-title" style="margin: 0;">
-              <a href="{{ site.baseurl }}/" title="Home" style="font-size: 1.6rem;">{{ site.title }}</a><br>
-              <small style="font-size: 1.05rem; color: #333;">{{ site.tagline }}</small>
-            </h3>
-          </div>
-        </div>
-      </div>
-      
-
-      <div class="container content">
-        {{ content }}  
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  <meta name="description" content="{{ site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/public/css/edition-2027.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container masthead">
+      <a class="conference-logo" href="https://2027.ieee-icra.org/" aria-label="Visit the official ICRA 2027 website"><img src="{{ '/images/icra-2027-official.png' | relative_url }}" alt="ICRA 2027 Seoul" width="145" height="97"></a>
+      <div class="workshop-brand">
+        <a class="brand-title" href="{{ '/' | relative_url }}">Building Safe Robots</a>
+        <p class="brand-subtitle"><span>Beyond the Lab: From Robotics and Embodied AI Research</span><span>to Deployable Systems</span></p>
       </div>
     </div>
-
-    <label for="sidebar-checkbox" class="sidebar-toggle" aria-label="Toggle navigation" role="button" tabindex="0"></label>
-
-    <footer class="container edition-footer">
-      <p>Proposed ICRA 2027 workshop · Full proposal in preparation</p>
-      <p><a href="{{ '/previous-workshops/' | relative_url }}">Previous Workshops</a> · <a href="mailto:figueredo@ieee.org">Contact the organizers</a></p>
-    </footer>
-
-    <script src='{{ site.baseurl }}/public/js/script.js'></script>
-  </body>
-
-
- 
+    <nav class="container main-nav" aria-label="Main navigation">
+      {% assign nav_labels = 'Home|Program|Invited Speakers|Call for Papers|Organizers|Previous Workshops' | split: '|' %}
+      {% assign nav_urls = '/|/program/|/speakers/|/cfp/|/organizers/|/previous-workshops/' | split: '|' %}
+      {% for label in nav_labels %}{% assign nav_url = nav_urls[forloop.index0] %}
+      <a href="{{ nav_url | relative_url }}"{% if page.url == nav_url %} aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+  </header>
+  <main id="main" class="container content">{{ content }}</main>
+  <footer class="site-footer">
+    <div class="container">
+      {% include institutions.html %}
+      <div class="footer-bottom"><p>Building Safe Robots · ICRA 2027</p><a href="{{ '/previous-workshops/' | relative_url }}">1st workshop · IROS 2025</a></div>
+    </div>
+  </footer>
+</body>
 </html>
-
-
-
-

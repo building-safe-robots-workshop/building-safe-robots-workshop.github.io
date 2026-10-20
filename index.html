@@ -3,25 +3,37 @@ layout: default
 title: Home
 permalink: /
 ---
-
-<h1>Building Safe Robots — Beyond the Lab</h1>
-<p class="lead">From Robotics and Embodied AI Research to Deployable Systems</p>
-<hr class="section-divider">
-<div class="edition-notice"><strong>Proposed ICRA 2027 workshop.</strong> The full proposal is in preparation. Acceptance, date and venue are not yet confirmed.</div>
-<div class="edition-hero">
-  <div><h2>Second edition · Full day</h2><p>Connecting research capabilities with the operational requirements, validation evidence and certification pathways needed for responsible deployment.</p></div>
-</div>
-<p>Robotic systems are advancing rapidly in perception, learning, planning and control. Deploying a complete system requires safety to span robot design, autonomy, human interaction, validation and certification, with assumptions and evidence that remain meaningful in real operating conditions.</p>
-<p>Following the first Building Safe Robots workshop at IROS 2025, this second edition brings together academic, practitioner and certification perspectives across three application domains:</p>
-<ul>
-<li><strong>Safety in Healthcare, Assistive, and Surgical Robotics:</strong> close interaction with people and vulnerable users.</li>
-<li><strong>Safety in Industry and Manufacturing:</strong> deployment under productivity, human interaction and operational constraints.</li>
-<li><strong>Safety Beyond Structured Workspaces: Field and High-Consequence Robotics:</strong> changing environments and demanding operating conditions.</li>
-</ul>
-<h2>From research claims to deployment evidence</h2>
-<p>Academic speakers will discuss capabilities they consider ready, or close to ready, for real-world use. Practitioners will examine those claims through concrete applications and deployment experience. Certification and regulation experts will discuss the evidence, validation and assurance needed to connect the two.</p>
-<p>Moderated <strong>Safety Translation Debates</strong>, interactive clinics and contributed presentations will bring participants into the discussion. A closing synthesis will produce a <strong>Lab-to-Real Safety Gap Map</strong> of shared barriers, domain-specific challenges, and priority research and assurance questions.</p>
-<p>Explore the <a href="{{ '/program/' | relative_url }}">proposed program</a>, meet the <a href="{{ '/organizers/' | relative_url }}">organizers</a>, or revisit the <a href="{{ '/2025/' | relative_url }}">IROS 2025 workshop</a>.</p>
-<h2>Participation</h2>
-<p>Invited speakers, the detailed schedule and the call for papers will be announced as plans are confirmed.</p>
-<p><strong>Contact:</strong> <a href="mailto:figueredo@ieee.org">figueredo@ieee.org</a></p>
+<section class="edition-hero" aria-labelledby="conference-heading">
+  <img class="workshop-art" src="{{ '/images/workshop-seoul-2027.png' | relative_url }}" alt="Building Safe Robots in Seoul: a person and robot shaking hands beside the Han River" width="1536" height="1024" fetchpriority="high">
+  <div class="event-details">
+    <p class="eyebrow">Full-day workshop</p>
+    <h1 id="conference-heading">IEEE International Conference on<br class="desktop-break"> Robotics and Automation <span>(ICRA 2027)</span></h1>
+    <p class="event-city">Seoul, Republic of Korea</p>
+    <dl class="event-facts">
+      <div><dt>Date</dt><dd>TBD</dd></div>
+      <div><dt>Time</dt><dd>TBD · Full day</dd></div>
+      <div><dt>Location</dt><dd><a href="https://2027.ieee-icra.org/attend/venue-conference-center/">Coex Convention &amp; Exhibition Center</a><br>Workshop room: TBD</dd></div>
+    </dl>
+    <p class="status-note">Proposed workshop · acceptance pending.</p>
+  </div>
+</section>
+{% include dates.html %}
+<section class="intro-section">
+  <h2>What does it take to move safe robots beyond the lab?</h2>
+  <p>Robots are becoming more capable. Demonstrating that a complete system can operate safely in the real world remains a different challenge. How do research advances in perception, learning, planning and control translate into systems that people can trust in daily use?</p>
+  <p>The 2nd Workshop on Building Safe Robots brings researchers, practitioners, and certification and regulation experts into the same conversation. Together, we will examine the assumptions behind research claims, the constraints encountered in deployment, and the evidence needed to connect the two.</p>
+  <p>Safety must hold across robot design, autonomy, human interaction, validation and certification. Learning-based systems and foundation models make this especially pressing: their behaviour can depend on data, context and adaptation after deployment. We will ask whether system-level safety assumptions and evidence remain valid as robots move from controlled studies into everyday operation.</p>
+  <p>Building on the <a href="{{ '/2025/' | relative_url }}">1st Workshop on Building Safe Robots (2025)</a>, we focus on three application domains:</p>
+  <div class="domain-list">
+    <article><span class="domain-number" aria-hidden="true">01</span><div><h3>Safety in Healthcare, Assistive, and Surgical Robotics</h3><p>Close interaction with people and vulnerable users, where physical safety, human factors and reliable assistance must be considered together.</p></div></article>
+    <article><span class="domain-number" aria-hidden="true">02</span><div><h3>Safety in Industry and Manufacturing</h3><p>Deployment under productivity, human interaction and operational constraints, connecting safe robot behaviour with practical industrial use.</p></div></article>
+    <article><span class="domain-number" aria-hidden="true">03</span><div><h3>Safety Beyond Structured Workspaces: Field Robotics</h3><p>Changing environments and demanding operating conditions, including nuclear and construction robotics.</p></div></article>
+  </div>
+</section>
+<section>
+  <h2>From research claims to deployment evidence</h2>
+  <p>Each domain combines an academic perspective, a practitioner perspective, and a moderated <strong>Safety Translation Debate</strong> with a certification or regulation expert. Speakers will examine what is ready for use, what still fails in practice, and what validation is needed.</p>
+  <p>Contributed presentations and <strong>interactive clinics</strong> will bring participants’ own deployment questions into these discussions. A closing synthesis will build a <strong>Lab-to-Real Safety Gap Map</strong>: shared barriers, domain-specific challenges, and priorities for research, validation and assurance.</p>
+  <div class="text-links"><a href="{{ '/program/' | relative_url }}">Explore the program <span aria-hidden="true">→</span></a><a href="{{ '/cfp/' | relative_url }}">Contribute your work <span aria-hidden="true">→</span></a></div>
+</section>
+{% include contact.html %}

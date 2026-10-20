@@ -3,8 +3,19 @@ layout: default
 title: Invited Speakers
 permalink: /speakers/
 ---
-
-<h1>Invited Speakers</h1><hr class="section-divider">
-<p>Invited speakers will be announced as participation is confirmed.</p>
-<p>The proposed program brings together academic researchers, practitioners, and certification or regulation experts across healthcare robotics, industry and manufacturing, and field and high-consequence robotics.</p>
-<p>See the <a href="{{ '/program/' | relative_url }}">proposed program</a> for the format of the talks and moderated discussions.</p>
+<h1>Invited Speakers</h1>
+<p class="page-intro">Nine perspectives on bringing safe robots into real-world use.</p>
+<p>Three contributors in each application domain will connect research, deployment and certification. Names, affiliations and talk details will be added as participation is confirmed.</p>
+{% assign domains = 'Healthcare, Assistive, and Surgical Robotics|Industry and Manufacturing|Field Robotics' | split: '|' %}
+{% assign roles = 'Academic perspective|Practitioner perspective|Certification & regulation' | split: '|' %}
+{% for domain in domains %}
+<section class="speaker-group">
+  <h2>{{ domain }}</h2>
+  {% for role in roles %}
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg></div>
+    <div class="speaker-details"><p class="eyebrow">{{ role }}</p><h3>Speaker to be announced</h3><p class="info">Affiliation: TBD</p><p><strong>{% if forloop.last %}Discussion focus{% else %}Talk title{% endif %}:</strong> TBD</p><p class="speaker-abstract">{% if forloop.last %}Certification and regulation perspective for the Safety Translation Debate.{% else %}Talk abstract and speaker profile to follow.{% endif %}</p></div>
+  </article>
+  {% endfor %}
+</section>
+{% endfor %}
