@@ -57,7 +57,7 @@ h1,h2,h3 {
   margin:0 0 1rem;
 }
 
-h1 {
+h1,.agenda-title {
   font-family:var(--sans);
   font-size:2rem;
   font-weight:650;
@@ -119,14 +119,14 @@ li::marker {
 
 .masthead {
   display:grid;
-  grid-template-columns:142px minmax(0,1fr);
+  grid-template-columns:180px minmax(0,1fr);
   gap:24px;
   align-items:center;
   padding-block:18px;
 }
 
 .conference-logo img {
-  width:142px;
+  width:180px;
   height:auto;
 }
 
@@ -342,13 +342,14 @@ li::marker {
 
 .domain-list {
   margin:28px 0;
+  background:var(--paper);
 }
 
 .domain-list article {
   display:grid;
   grid-template-columns:45px 1fr;
   gap:18px;
-  padding:20px 0;
+  padding:20px 30px;
   border-top:1px solid var(--rule);
 }
 
@@ -539,8 +540,12 @@ li::marker {
   font-size:.9rem;
 }
 
+.agenda-title {
+  margin:32px 0 18px;
+}
+
 .agenda {
-  margin:32px 0;
+  margin:0 0 32px;
 }
 
 .agenda-row {
@@ -754,12 +759,12 @@ li::marker {
 
 @media(max-width:900px) {
   .masthead {
-    grid-template-columns:105px 1fr;
+    grid-template-columns:135px 1fr;
     gap:22px;
   }
 
   .conference-logo img {
-    width:105px;
+    width:135px;
   }
 
   .brand-title {
@@ -839,7 +844,7 @@ li::marker {
   }
 
   .conference-logo img {
-    width:110px;
+    width:140px;
   }
 
   .brand-title {
@@ -919,6 +924,7 @@ li::marker {
   .domain-list article {
     grid-template-columns:30px 1fr;
     gap:12px;
+    padding-inline:20px;
   }
 
   .topics-list {
