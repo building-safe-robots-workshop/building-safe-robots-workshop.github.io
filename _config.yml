@@ -1,9 +1,14 @@
+# SITE METADATA: browser-tab title and search description.
+# The visible header title/subtitle are edited in _layouts/default.html.
 title: "2nd Workshop on Building Safe Robots"
 tagline: "Beyond the Lab: From Robotics and Embodied AI Research to Deployable Systems"
 description: "A proposed full-day ICRA 2027 workshop connecting robot safety research with deployment, validation and certification."
+# PUBLISHED ADDRESS: keep baseurl empty for this GitHub Pages repository.
 url: "https://building-safe-robots-workshop.github.io"
 baseurl: ""
+# PAGE URLS: individual pages specify their public route with permalink.
 permalink: pretty
+# SOURCE-ONLY FILES: these are not copied into the published site.
 exclude:
   - README.md
   - Gemfile

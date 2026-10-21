@@ -3,21 +3,113 @@ layout: default
 title: Program
 permalink: /program/
 ---
+
+<!-- PROGRAM INTRODUCTION: overview, confirmed date/time and program status. -->
 <h1>Workshop Program</h1>
 <p class="page-intro">Three application domains. Research, practice and certification in conversation.</p>
 <p>Each domain brings together an academic researcher, a practitioner, and a certification or regulation expert. Talks lead into a moderated Safety Translation Debate, with questions from participants and contributed work.</p>
-<div class="program-meta"><span><strong>Date:</strong> TBD</span><span><strong>Time:</strong> TBD</span><span><strong>Format:</strong> Full day</span></div>
+<div class="program-meta">
+  <span><strong>Date:</strong> TBD</span>
+  <span><strong>Time:</strong> TBD</span>
+  <span><strong>Format:</strong> Full day</span>
+</div>
 <p class="status-note">Proposed program. Session order, timings and speakers will be confirmed following acceptance.</p>
+
+<!-- AGENDA: sessions appear in the order below. Each agenda-row is one session.
+     Change its agenda-time text to set the time. Copy a whole section to add a row.
+     Shared academic/practitioner/debate text lives in _includes/session-format.html. -->
 <h2 class="agenda-title" id="agenda-heading">Agenda</h2>
 <div class="agenda" aria-labelledby="agenda-heading">
-  <section class="agenda-row agenda-opening"><div class="agenda-time">TBD</div><div><div class="agenda-heading"><p class="eyebrow">Opening</p><h2>Setting the scene: safety beyond the lab</h2></div></div></section>
-  <section class="agenda-row"><div class="agenda-time">TBD</div><div><div class="agenda-heading"><p class="eyebrow">Domain 01</p><h2>Safety in Healthcare, Assistive, and Surgical Robotics</h2></div><p>Close interaction with people and vulnerable users.</p>{% include session-format.html %}</div></section>
-  <section class="agenda-row agenda-break"><div class="agenda-time">TBD</div><div><h2>Coffee &amp; discussion</h2></div></section>
-  <section class="agenda-row"><div class="agenda-time">TBD</div><div><div class="agenda-heading"><p class="eyebrow">Contributed work</p><h2>Paper presentations &amp; interactive clinics</h2></div><p>Selected contributions and participant questions about deployment, safety, validation and certification, with feedback from researchers and practitioners.</p></div></section>
-  <section class="agenda-row agenda-break"><div class="agenda-time">TBD</div><div><h2>Lunch break</h2></div></section>
-  <section class="agenda-row"><div class="agenda-time">TBD</div><div><div class="agenda-heading"><p class="eyebrow">Domain 02</p><h2>Safety in Industry and Manufacturing</h2></div><p>Deployment under productivity, human interaction and operational constraints.</p>{% include session-format.html %}</div></section>
-  <section class="agenda-row agenda-break"><div class="agenda-time">TBD</div><div><h2>Coffee &amp; discussion</h2></div></section>
-  <section class="agenda-row"><div class="agenda-time">TBD</div><div><div class="agenda-heading"><p class="eyebrow">Domain 03</p><h2>Safety Beyond Structured Workspaces: Field Robotics</h2></div><p>Changing environments and demanding operating conditions, including nuclear and construction robotics.</p>{% include session-format.html %}</div></section>
-  <section class="agenda-row agenda-closing"><div class="agenda-time">TBD</div><div><div class="agenda-heading"><p class="eyebrow">Closing synthesis</p><h2>Lab-to-Real Safety Gap Map</h2></div><p>An organizer-led synthesis with certification and regulation contributors, bringing together shared barriers, domain-specific differences, and priorities for research and validation.</p></div></section>
+  <!-- OPENING -->
+  <section class="agenda-row agenda-opening">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <div class="agenda-heading">
+        <p class="eyebrow">Opening</p>
+        <h2>Setting the scene: safety beyond the lab</h2>
+      </div>
+    </div>
+  </section>
+  <!-- DOMAIN 01: healthcare, assistive and surgical robotics -->
+  <section class="agenda-row">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <div class="agenda-heading">
+        <p class="eyebrow">Domain 01</p>
+        <h2>Safety in Healthcare, Assistive, and Surgical Robotics</h2>
+      </div>
+      <p>Close interaction with people and vulnerable users.</p>
+      {% include session-format.html %}
+    </div>
+  </section>
+  <!-- MORNING COFFEE -->
+  <section class="agenda-row agenda-break">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <h2>Coffee &amp; discussion</h2>
+    </div>
+  </section>
+  <!-- CONTRIBUTED WORK: presentations and clinics -->
+  <section class="agenda-row">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <div class="agenda-heading">
+        <p class="eyebrow">Contributed work</p>
+        <h2>Paper presentations &amp; interactive clinics</h2>
+      </div>
+      <p>Selected contributions and participant questions about deployment, safety, validation and certification, with feedback from researchers and practitioners.</p>
+    </div>
+  </section>
+  <!-- LUNCH -->
+  <section class="agenda-row agenda-break">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <h2>Lunch break</h2>
+    </div>
+  </section>
+  <!-- DOMAIN 02: industry and manufacturing -->
+  <section class="agenda-row">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <div class="agenda-heading">
+        <p class="eyebrow">Domain 02</p>
+        <h2>Safety in Industry and Manufacturing</h2>
+      </div>
+      <p>Deployment under productivity, human interaction and operational constraints.</p>
+      {% include session-format.html %}
+    </div>
+  </section>
+  <!-- AFTERNOON COFFEE -->
+  <section class="agenda-row agenda-break">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <h2>Coffee &amp; discussion</h2>
+    </div>
+  </section>
+  <!-- DOMAIN 03: field robotics -->
+  <section class="agenda-row">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <div class="agenda-heading">
+        <p class="eyebrow">Domain 03</p>
+        <h2>Safety Beyond Structured Workspaces: Field Robotics</h2>
+      </div>
+      <p>Changing environments and demanding operating conditions, including nuclear and construction robotics.</p>
+      {% include session-format.html %}
+    </div>
+  </section>
+  <!-- CLOSING SYNTHESIS -->
+  <section class="agenda-row agenda-closing">
+    <div class="agenda-time">TBD</div>
+    <div>
+      <div class="agenda-heading">
+        <p class="eyebrow">Closing synthesis</p>
+        <h2>Lab-to-Real Safety Gap Map</h2>
+      </div>
+      <p>An organizer-led synthesis with certification and regulation contributors, bringing together shared barriers, domain-specific differences, and priorities for research and validation.</p>
+    </div>
+  </section>
 </div>
+
+<!-- LINKS BELOW THE AGENDA -->
 <p class="text-links"><a href="{{ '/speakers/' | relative_url }}">Invited speakers <span aria-hidden="true">→</span></a><a href="{{ '/cfp/' | relative_url }}">Call for papers <span aria-hidden="true">→</span></a></p>

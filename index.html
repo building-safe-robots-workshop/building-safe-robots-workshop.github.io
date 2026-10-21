@@ -3,21 +3,37 @@ layout: default
 title: Home
 permalink: /
 ---
+
+<!-- HOME: conference illustration, event name, date, time and venue. -->
 <section class="edition-hero" aria-labelledby="conference-heading">
   <img class="workshop-art" src="{{ '/images/workshop-seoul-2027.png' | relative_url }}" alt="Building Safe Robots in Seoul: a person and robot shaking hands beside the Han River" width="1536" height="1024" fetchpriority="high">
   <div class="event-details">
     <p class="eyebrow">Full-day workshop</p>
     <h1 id="conference-heading">IEEE International Conference on<br class="desktop-break"> Robotics and Automation <span>(ICRA 2027)</span></h1>
     <p class="event-city">Seoul, Republic of Korea</p>
+    <!-- EVENT DETAILS: replace each TBD here when confirmed. Also update program.html. -->
     <dl class="event-facts">
-      <div><dt>Date</dt><dd>TBD</dd></div>
-      <div><dt>Time</dt><dd>TBD · Full day</dd></div>
-      <div><dt>Location</dt><dd><a href="https://2027.ieee-icra.org/attend/venue-conference-center/">Coex Convention &amp; Exhibition Center</a><br>Workshop room: TBD</dd></div>
+      <div>
+        <dt>Date</dt>
+        <dd>TBD</dd>
+      </div>
+      <div>
+        <dt>Time</dt>
+        <dd>TBD · Full day</dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd><a href="https://2027.ieee-icra.org/attend/venue-conference-center/">Coex Convention &amp; Exhibition Center</a><br>Workshop room: TBD</dd>
+      </div>
     </dl>
     <p class="status-note">Proposed workshop · acceptance pending.</p>
   </div>
 </section>
+
+<!-- IMPORTANT DATES: edit _includes/dates.html; also used on the Call for Papers page. -->
 {% include dates.html %}
+
+<!-- INTRODUCTION: workshop motivation and the three application domains. -->
 <section class="intro-section">
   <h2>What does it take to build safe robots beyond the lab?</h2>
   <p>Robots are becoming more capable. Demonstrating that a complete system can operate safely in the real world remains a different challenge. How do research advances in perception, learning, planning and control translate into systems that people can trust in daily use?</p>
@@ -25,15 +41,43 @@ permalink: /
   <p>To address these challenges, the 2nd Workshop on Building Safe Robots brings <strong>researchers, practitioners, and certification and regulation experts</strong> into the same conversation. Together, we will examine the assumptions behind research claims, the constraints encountered in deployment, and the evidence needed to connect the two.</p>
   <p>Building on the <a href="{{ '/2025/' | relative_url }}">1st Workshop on Building Safe Robots (2025)</a>, we focus on three application domains:</p>
   <div class="domain-list">
-    <article><span class="domain-number" aria-hidden="true">01</span><div><h3>Safety in Healthcare, Assistive, and Surgical Robotics</h3><p>Close interaction with people and vulnerable users, where physical safety, human factors and reliable assistance must be considered together.</p></div></article>
-    <article><span class="domain-number" aria-hidden="true">02</span><div><h3>Safety in Industry and Manufacturing</h3><p>Deployment under productivity, human interaction and operational constraints, connecting safe robot behaviour with practical industrial use.</p></div></article>
-    <article><span class="domain-number" aria-hidden="true">03</span><div><h3>Safety Beyond Structured Workspaces: Field Robotics</h3><p>Changing environments and demanding operating conditions, including nuclear and construction robotics.</p></div></article>
+    <!-- DOMAIN 01: edit this heading and description together. -->
+    <article>
+      <span class="domain-number" aria-hidden="true">01</span>
+      <div>
+        <h3>Safety in Healthcare, Assistive, and Surgical Robotics</h3>
+        <p>Close interaction with people and vulnerable users, where physical safety, human factors and reliable assistance must be considered together.</p>
+      </div>
+    </article>
+    <!-- DOMAIN 02: edit this heading and description together. -->
+    <article>
+      <span class="domain-number" aria-hidden="true">02</span>
+      <div>
+        <h3>Safety in Industry and Manufacturing</h3>
+        <p>Deployment under productivity, human interaction and operational constraints, connecting safe robot behaviour with practical industrial use.</p>
+      </div>
+    </article>
+    <!-- DOMAIN 03: edit this heading and description together. -->
+    <article>
+      <span class="domain-number" aria-hidden="true">03</span>
+      <div>
+        <h3>Safety Beyond Structured Workspaces: Field Robotics</h3>
+        <p>Changing environments and demanding operating conditions, including nuclear and construction robotics.</p>
+      </div>
+    </article>
   </div>
 </section>
+
+<!-- WORKSHOP FORMAT: discussion structure and links to the other pages. -->
 <section>
   <h2>From research claims to deployment evidence</h2>
   <p>Each domain combines an academic perspective, a practitioner perspective, and a moderated <strong>Safety Translation Debate</strong> with a certification or regulation expert. Speakers will examine what is ready for use, what still fails in practice, and what validation is needed.</p>
   <p>Contributed presentations and <strong>interactive clinics</strong> will bring participants’ own deployment questions into these discussions. A closing synthesis will build a <strong>Lab-to-Real Safety Gap Map</strong>: shared barriers, domain-specific challenges, and priorities for research, validation and assurance.</p>
-  <div class="text-links"><a href="{{ '/program/' | relative_url }}">Explore the program <span aria-hidden="true">→</span></a><a href="{{ '/cfp/' | relative_url }}">Contribute your work <span aria-hidden="true">→</span></a></div>
+  <div class="text-links">
+    <a href="{{ '/program/' | relative_url }}">Explore the program <span aria-hidden="true">→</span></a>
+    <a href="{{ '/cfp/' | relative_url }}">Contribute your work <span aria-hidden="true">→</span></a>
+  </div>
 </section>
+
+<!-- CONTACTS: edit _includes/contact.html to update every current page using it. -->
 {% include contact.html %}

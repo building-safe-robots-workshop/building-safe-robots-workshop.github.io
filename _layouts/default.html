@@ -1,37 +1,52 @@
+<!-- SHARED PAGE LAYOUT: header, navigation and footer for the current workshop.
+     Page-specific content is inserted at main. See docs/editing.md for the file map. -->
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title }} · {{ site.title }}</title>
-  <meta name="description" content="{{ site.description | escape }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="stylesheet" href="{{ '/public/css/edition-2027.css' | relative_url }}?v=2027-04">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container masthead">
-      <a class="conference-logo" href="https://2027.ieee-icra.org/" aria-label="Visit the official ICRA 2027 website"><img src="{{ '/images/icra-2027-official.png' | relative_url }}" alt="ICRA 2027 Seoul" width="180" height="120"></a>
-      <div class="workshop-brand">
-        <a class="brand-title" href="{{ '/' | relative_url }}">2nd Workshop on Building Safe Robots</a>
-        <p class="brand-subtitle"><span><strong>Beyond the Lab:</strong> From Robotics and Embodied AI Research</span> <span>to Deployable Systems</span></p>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BROWSER TAB AND SEARCH DESCRIPTION: page title + _config.yml metadata. -->
+    <title>{{ page.title }} · {{ site.title }}</title>
+    <meta name="description" content="{{ site.description | escape }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <!-- STYLES: public/css/edition-2027.css. Bump the v= value after visual CSS changes. -->
+    <link rel="stylesheet" href="{{ '/public/css/edition-2027.css' | relative_url }}?v=2027-04">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- SHARED HEADER: conference logo, workshop title and two-line subtitle. -->
+    <header class="site-header">
+      <div class="container masthead">
+        <!-- CONFERENCE LOGO: image path, accessible name and official conference link. -->
+        <a class="conference-logo" href="https://2027.ieee-icra.org/" aria-label="Visit the official ICRA 2027 website"><img src="{{ '/images/icra-2027-official.png' | relative_url }}" alt="ICRA 2027 Seoul" width="180" height="120"></a>
+        <!-- WORKSHOP TITLE / SUBTITLE: visible on all current pages. -->
+        <div class="workshop-brand">
+          <a class="brand-title" href="{{ '/' | relative_url }}">2nd Workshop on Building Safe Robots</a>
+          <p class="brand-subtitle"><span><strong>Beyond the Lab:</strong> From Robotics and Embodied AI Research</span> <span>to Deployable Systems</span></p>
+        </div>
       </div>
-    </div>
-    <nav class="container main-nav" aria-label="Main navigation">
-      {% assign nav_labels = 'Home|Program|Invited Speakers|Call for Papers|Organizers|Previous Workshops' | split: '|' %}
-      {% assign nav_urls = '/|/program/|/speakers/|/cfp/|/organizers/|/previous-workshops/' | split: '|' %}
-      {% for label in nav_labels %}{% assign nav_url = nav_urls[forloop.index0] %}
-      <a href="{{ nav_url | relative_url }}"{% if page.url == nav_url %} aria-current="page"{% endif %}>{{ label }}</a>
-      {% endfor %}
-    </nav>
-  </header>
-  <main id="main" class="container content">{{ content }}</main>
-  <footer class="site-footer">
-    <div class="container">
-      {% include institutions.html %}
-      <div class="footer-bottom"><p>Building Safe Robots · ICRA 2027</p><a href="{{ '/previous-workshops/' | relative_url }}">1st workshop · IROS 2025</a></div>
-    </div>
-  </footer>
-</body>
+      <!-- NAVIGATION: labels and URLs below match by position; separate entries with |.
+           The existing loop highlights the link matching the current page URL. -->
+      <nav class="container main-nav" aria-label="Main navigation">
+        {% assign nav_labels = 'Home|Program|Invited Speakers|Call for Papers|Organizers|Previous Workshops' | split: '|' %}
+        {% assign nav_urls = '/|/program/|/speakers/|/cfp/|/organizers/|/previous-workshops/' | split: '|' %}
+        {% for label in nav_labels %}
+          {% assign nav_url = nav_urls[forloop.index0] %}
+          <a href="{{ nav_url | relative_url }}"{% if page.url == nav_url %} aria-current="page"{% endif %}>{{ label }}</a>
+        {% endfor %}
+      </nav>
+    </header>
+    <!-- PAGE CONTENT: supplied by index.html, program.html, speakers.html, etc. -->
+    <main id="main" class="container content">{{ content }}</main>
+    <!-- SHARED FOOTER: institution logos and the link to the first workshop. -->
+    <footer class="site-footer">
+      <div class="container">
+        {% include institutions.html %}
+        <div class="footer-bottom">
+          <p>Building Safe Robots · ICRA 2027</p>
+          <a href="{{ '/previous-workshops/' | relative_url }}">1st workshop · IROS 2025</a>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

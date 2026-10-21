@@ -7,6 +7,16 @@ The root site is the proposed ICRA 2027 2nd workshop. Acceptance, date, speakers
 schedule, submission details and sponsorship remain pending. Update these only
 when confirmed by the organizers.
 
+## Editing the website
+
+Start with [the manual editing guide](docs/editing.md). It maps visible sections
+to their source files and shows how to edit dates, agenda sessions, speakers,
+organizers, images and styles. The HTML contains searchable section comments.
+Each speaker and agenda session has its own editable block.
+
+Most content changes need only a text editor: open the relevant HTML file, find
+the visible text, and edit it. No new tools or dependencies are needed.
+
 ## Local preview and checks
 
 ```sh

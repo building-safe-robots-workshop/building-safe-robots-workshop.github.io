@@ -3,19 +3,140 @@ layout: default
 title: Invited Speakers
 permalink: /speakers/
 ---
+
+<!-- INVITED SPEAKERS: nine independent entries, grouped by application domain.
+     In each speaker-row, edit the name (h3), affiliation, talk title and abstract.
+     Replace speaker-placeholder with an image when a portrait is confirmed;
+     see docs/editing.md for an example. -->
 <h1>Invited Speakers</h1>
 <p class="page-intro">Nine perspectives on bringing safe robots into real-world use.</p>
 <p>Three contributors in each application domain will connect research, deployment and certification. Names, affiliations and talk details will be added as participation is confirmed.</p>
-{% assign domains = 'Healthcare, Assistive, and Surgical Robotics|Industry and Manufacturing|Field Robotics' | split: '|' %}
-{% assign roles = 'Academic perspective|Practitioner perspective|Certification & regulation' | split: '|' %}
-{% for domain in domains %}
+<!-- DOMAIN 01: Healthcare, Assistive, and Surgical Robotics -->
 <section class="speaker-group">
-  <h2>{{ domain }}</h2>
-  {% for role in roles %}
+  <h2>Healthcare, Assistive, and Surgical Robotics</h2>
+  <!-- SPEAKER 1.1: Academic perspective -->
   <article class="speaker-row">
-    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg></div>
-    <div class="speaker-details"><p class="eyebrow">{{ role }}</p><h3>Speaker to be announced</h3><p class="info">Affiliation: TBD</p><p><strong>{% if forloop.last %}Discussion focus{% else %}Talk title{% endif %}:</strong> TBD</p><p class="speaker-abstract">{% if forloop.last %}Certification and regulation perspective for the Safety Translation Debate.{% else %}Talk abstract and speaker profile to follow.{% endif %}</p></div>
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Academic perspective</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Talk title:</strong> TBD</p>
+      <p class="speaker-abstract">Talk abstract and speaker profile to follow.</p>
+    </div>
   </article>
-  {% endfor %}
+  <!-- SPEAKER 1.2: Practitioner perspective -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Practitioner perspective</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Talk title:</strong> TBD</p>
+      <p class="speaker-abstract">Talk abstract and speaker profile to follow.</p>
+    </div>
+  </article>
+  <!-- SPEAKER 1.3: Certification & regulation -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Certification & regulation</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Discussion focus:</strong> TBD</p>
+      <p class="speaker-abstract">Certification and regulation perspective for the Safety Translation Debate.</p>
+    </div>
+  </article>
 </section>
-{% endfor %}
+<!-- DOMAIN 02: Industry and Manufacturing -->
+<section class="speaker-group">
+  <h2>Industry and Manufacturing</h2>
+  <!-- SPEAKER 2.1: Academic perspective -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Academic perspective</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Talk title:</strong> TBD</p>
+      <p class="speaker-abstract">Talk abstract and speaker profile to follow.</p>
+    </div>
+  </article>
+  <!-- SPEAKER 2.2: Practitioner perspective -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Practitioner perspective</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Talk title:</strong> TBD</p>
+      <p class="speaker-abstract">Talk abstract and speaker profile to follow.</p>
+    </div>
+  </article>
+  <!-- SPEAKER 2.3: Certification & regulation -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Certification & regulation</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Discussion focus:</strong> TBD</p>
+      <p class="speaker-abstract">Certification and regulation perspective for the Safety Translation Debate.</p>
+    </div>
+  </article>
+</section>
+<!-- DOMAIN 03: Field Robotics -->
+<section class="speaker-group">
+  <h2>Field Robotics</h2>
+  <!-- SPEAKER 3.1: Academic perspective -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Academic perspective</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Talk title:</strong> TBD</p>
+      <p class="speaker-abstract">Talk abstract and speaker profile to follow.</p>
+    </div>
+  </article>
+  <!-- SPEAKER 3.2: Practitioner perspective -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Practitioner perspective</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Talk title:</strong> TBD</p>
+      <p class="speaker-abstract">Talk abstract and speaker profile to follow.</p>
+    </div>
+  </article>
+  <!-- SPEAKER 3.3: Certification & regulation -->
+  <article class="speaker-row">
+    <div class="speaker-placeholder" aria-label="Speaker portrait to be announced">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="35" r="16"/><path d="M20 84c0-21 12-32 30-32s30 11 30 32"/></svg>
+    </div>
+    <div class="speaker-details">
+      <p class="eyebrow">Certification & regulation</p>
+      <h3>Speaker to be announced</h3>
+      <p class="info">Affiliation: TBD</p>
+      <p><strong>Discussion focus:</strong> TBD</p>
+      <p class="speaker-abstract">Certification and regulation perspective for the Safety Translation Debate.</p>
+    </div>
+  </article>
+</section>
