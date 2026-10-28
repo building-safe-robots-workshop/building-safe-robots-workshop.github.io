@@ -1,5 +1,14 @@
 # ICRA 2027 website design and content sources
 
+## Industrial endorsement update — 28 October 2026
+
+NOKOV confirmed industrial collaboration and website endorsement in Amy Zhang's
+27 October reply to Luis and Ellen Chen, independently of financial sponsorship.
+The organizers-page description is the company text supplied by Amy on 28 October.
+`images/nokov-collaborator.png` is the unmodified high-resolution image from her
+`NOKOV logo.zip` attachment. Acceptance and all other pending event details remain
+unchanged. The earlier archive's sponsorship content remains independent.
+
 Updated 20 October 2026. Content follows the organizer-supplied ICRA 2027
 WT pre-proposal (submission 197, modified 3 September 2026), with the
 organizer's subsequent field-robotics wording. The full proposal is not yet
