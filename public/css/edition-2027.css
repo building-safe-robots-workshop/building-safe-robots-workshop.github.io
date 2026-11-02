@@ -620,6 +620,15 @@ li::marker {
   margin: 0;
 }
 
+.agenda-opening, .agenda-closing {
+  background: var(--paper);
+  padding-right: 16px;
+}
+
+.agenda-opening .agenda-time, .agenda-closing .agenda-time {
+  padding-left: 15px;
+}
+
 .agenda-opening {
   padding-block: 16px;
 }
@@ -640,7 +649,11 @@ li::marker {
 .session-format li {
   margin: 0;
   padding: 0;
-  font-size: .87rem;
+  font-size: 1rem;
+}
+
+.session-format .session-certification {
+  grid-column: 1 / -1;
 }
 
 .session-format li:last-child {
@@ -654,8 +667,8 @@ li::marker {
 }
 
 .session-format span {
-  color: var(--muted);
-  font-size: .84rem;
+  color: var(--ink);
+  font-size: 1rem;
   margin-top: 3px;
 }
 
@@ -1011,7 +1024,7 @@ li::marker {
   }
 
   .agenda-row {
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 58px minmax(0,1fr);
     gap: 12px;
     padding-right: 0;
   }
@@ -1029,7 +1042,11 @@ li::marker {
     font-size: .9rem;
   }
 
-  .agenda-break .agenda-time {
+  .agenda-time {
+    font-size: .9rem;
+  }
+
+  .agenda-break .agenda-time, .agenda-opening .agenda-time, .agenda-closing .agenda-time {
     padding-left: 4px;
   }
 

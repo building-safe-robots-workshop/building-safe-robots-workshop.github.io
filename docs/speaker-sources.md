@@ -6,7 +6,7 @@ Checked 2 November 2026 for the ICRA 2027 update. This file is excluded from the
 
 The supplied `Building_Safe_Robots_ICRA_2027_Overleaf__1_-2.pdf`, page 3, supplies the nine names, domain assignments, topics and the 08:30–18:00 schedule. Its explicit program table and 90-minute format take precedence over older prose later in the PDF describing 75-minute blocks, a half-hour opening and an hour-long closing. The website uses 25-minute academic and practitioner presentations, a 15-minute certification/validation contribution, and a 25-minute debate. Date and final timings remain tentative. Topic labels are not presented as final talk titles or abstracts.
 
-Each profile was checked in three passes: identity/affiliation; role and research claims against the sources below; final wording and portrait against the proposal and source page. No degrees, awards, publication counts or early-career labels were copied from unverified summaries. Photographs retain source links on the speaker page. Public availability is not a claim of an open image licence.
+Each profile was checked in three passes: identity/affiliation; role and research claims against the sources below; final wording and portrait against the proposal and source page. No degrees, awards, publication counts or early-career labels were copied from unverified summaries. Portrait source links are retained here for maintenance; the public speaker page shows only profile/research links. Public availability is not a claim of an open image licence.
 
 The KETI identity was disambiguated using the invitation correspondence and existing planning-sheet export, then matched to KETI's Korean directory and the speaker's signed article. No private correspondence or contact details are published.
 
