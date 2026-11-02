@@ -799,6 +799,7 @@ li::marker {
 }
 .collaborator-logo { display: block; width: min(100%, 370px); margin-bottom: 1rem; }
 .collaborator-logo img { display: block; width: 100%; height: auto; }
+.mtc-support-logo { max-width: 235px; padding: 1rem; background: var(--navy, #152d45); border-radius: 4px; }
 .collaborator-card p:last-child { margin-bottom: 0; }
 
 /* 17. LARGE SCREENS: 1100px and above */

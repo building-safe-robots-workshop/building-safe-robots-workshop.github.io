@@ -4,7 +4,7 @@ GitHub Pages source for https://building-safe-robots-workshop.github.io/.
 Repository: building-safe-robots-workshop/building-safe-robots-workshop.github.io.
 
 The root site is the proposed ICRA 2027 2nd workshop. Acceptance, date, speakers,
-schedule, submission details and sponsorship remain pending. NOKOV is a confirmed
+schedule, submission details and financial sponsorship remain pending. The latest proposal confirms HRI TC endorsement and MTC support for industrial engagement. NOKOV is a confirmed
 industrial collaborator and endorser, independently of financial sponsorship. Update pending details only
 when confirmed by the organizers.
 
@@ -63,7 +63,7 @@ the organizers page provide contact details.
 
 Current pages use `public/css/edition-2027.css`; the 2025 snapshot keeps its
 original layout and assets. Shared dates, contacts and institution logos live
-in `_includes/`. Nine speaker placeholders are grouped into three domain blocks.
+in `_includes/`. Nine invited speaker profiles are grouped into three domain blocks.
 The conference logo links directly to the official ICRA 2027 website.
 
 Content and asset provenance, including the generated Seoul illustration prompt,
